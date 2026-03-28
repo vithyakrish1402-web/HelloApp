@@ -1,14 +1,20 @@
+/**
+ * HelloApp.java
+ * UC3: Display "Hello" with command-line argument or default message
+ */
 public class HelloApp {
 
     public static void main(String[] args) {
 
-        // Check if argument is provided
+        // Default value
+        String name = "World";
+
+        // Check if user provided argument
         if (args.length > 0) {
-            String name = args[0];
-            System.out.println("Hello, " + name + "!");
-        } else {
-            System.out.println("Please provide your name.");
+            name = args[0];
         }
 
+        // Output
+        System.out.println("Hello, " + name + "!");
     }
 }
