@@ -1,7 +1,7 @@
 /**
  * HelloApp.java
- * UC6: Display "Hello" with multiple command-line arguments
- * using substring to remove trailing delimiter
+ * UC7: Display "Hello" with multiple command-line arguments
+ * using String.join() or default message
  */
 public class HelloApp {
 
@@ -9,20 +9,12 @@ public class HelloApp {
 
         String name;
 
-        // Default case
+        // If no arguments → default
         if (args.length == 0) {
             name = "World";
         } else {
-
-            StringBuilder nameBuilder = new StringBuilder();
-
-            // Enhanced for loop
-            for (String n : args) {
-                nameBuilder.append(n).append(", ");
-            }
-
-            // Remove trailing ", "
-            name = nameBuilder.substring(0, nameBuilder.length() - 2);
+            // Join all arguments with ", "
+            name = String.join(", ", args);
         }
 
         System.out.println("Hello, " + name + "!");
