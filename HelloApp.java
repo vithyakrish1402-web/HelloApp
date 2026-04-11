@@ -1,20 +1,22 @@
 /**
  * HelloApp.java
- * UC3: Display "Hello" with command-line argument or default message
+ * UC7: Display "Hello" with multiple command-line arguments
+ * using String.join() or default message
  */
 public class HelloApp {
 
     public static void main(String[] args) {
 
-        // Default value
-        String name = "World";
+        String name;
 
-        // Check if user provided argument
-        if (args.length > 0) {
-            name = args[0];
+        // If no arguments → default
+        if (args.length == 0) {
+            name = "World";
+        } else {
+            // Join all arguments with ", "
+            name = String.join(", ", args);
         }
 
-        // Output
         System.out.println("Hello, " + name + "!");
     }
 }
